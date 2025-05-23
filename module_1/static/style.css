@@ -1,0 +1,34 @@
+body {
+    background: #f0f4f8;
+    color: #222;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    color: #005f73;
+}
+a {
+    color: #e76f51;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+    margin: 2em;
+}
+
+.about-text {
+    flex: 2;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.about-image img {
+    max-width: 200px;
+    border-radius: 8px;
+}
