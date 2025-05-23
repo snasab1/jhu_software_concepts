@@ -6,13 +6,83 @@ body {
 h1 {
     color: #005f73;
 }
+
+
+
+/* Toolbar styles */
+.navbar {
+    background: #005f73;
+    padding: 1em 0;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* General link styles for all links on the page */
 a {
     color: #e76f51;
+    transition: color 0.2s;
+}
+
+a:hover,
+a:focus {
+    color: #0a9396;
+    text-decoration: underline;
+}
+a:active {
+    color: #222;
+}
+
+a:visited {
+    color: hsl(318, 100%, 75%);
+}
+
+.nav-link {
+    color: #fff;
+    margin: 0 1.5em;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    transition: 
+        color 0.2s,
+        background 0.2s;
+}
+
+/* Change color when hovered */
+.nav-link:hover,
+.nav-link:focus {
+    background: #0a9396;
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Change color when link is active (being clicked) */
+.nav-link:active {
+    background: #94d2bd;
+    color: #222;
+}
+
+/* Change color after link is visited */
+.nav-link:visited {
+    color: hsl(318, 100%, 75%) ;
+}
+
+
+
+
+body {
+    padding-top: 4em; /* Add space so content isn't hidden under navbar */
 }
 
 .about-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 2em;
     margin: 2em;
@@ -26,9 +96,13 @@ a {
     flex: 1;
     display: flex;
     justify-content: flex-end;
+    /* Remove margin-top here */
 }
 
 .about-image img {
-    max-width: 200px;
+    width: 350px;
+    height: auto;
     border-radius: 8px;
+    margin-top: 0.5in; /* Adjust space above image here */
 }
+
