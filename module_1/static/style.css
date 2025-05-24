@@ -7,19 +7,19 @@ h1 {
     color: #005f73;
 }
 
-
-
 /* Toolbar styles */
 .navbar {
     background: #005f73;
     padding: 1em 0;
-    text-align: center;
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: flex-end; /* Shifts links to the right */
+    align-items: center;
 }
 
 /* General link styles for all links on the page */
@@ -35,10 +35,6 @@ a:focus {
 }
 a:active {
     color: #222;
-}
-
-a:visited {
-    color: hsl(318, 100%, 75%);
 }
 
 .nav-link {
@@ -66,6 +62,14 @@ a:visited {
 .nav-link:active {
     background: #94d2bd;
     color: #222;
+} 
+
+a:visited {
+    color: hsl(318, 100%, 75%);
+}
+
+body a:visited {
+    color: hsl(318, 100%, 75%);
 }
 
 /* Change color after link is visited */

@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <nav class="navbar">
-        <a href="/" class="nav-link">Homepage</a>
-        <a href="/projects/" class="nav-link">Projects</a>
-        <a href="/contact/" class="nav-link">Contact</a>
+        <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Homepage</a>
+        <a href="/projects/" class="nav-link {% if request.path == '/projects/' %}active{% endif %}">Projects</a>
+        <a href="/contact/" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
     </nav>
-<div class="about-container">
-    <div class="about-text">
-        <h1>Welcome to the Home Page!</h1>
-        <p>Hello! My name is Sara Nasab. I am a software developer with a passion for building web applications and learning new technologies.</p>
-        <p>
-            I enjoy solving complex problems and collaborating with others to create impactful software solutions. My interests include web development, artificial intelligence, and user experience design. In my free time, I love exploring new programming languages, reading tech blogs, and hiking in nature.
-        </p>
+    <div class="about-container">
+        <div class="about-text">
+            <h1>Welcome to the Home Page!</h1>
+            <p>Hello! My name is Sara Nasab. I am a software developer with a passion for building web applications and
+                learning new technologies.</p>
+            <p>
+                I enjoy solving complex problems and collaborating with others to create impactful software solutions.
+                My interests include web development, artificial intelligence, and user experience design. In my free
+                time, I love exploring new programming languages, reading tech blogs, and hiking in nature.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="{{ url_for('static', filename='profile_photo.jpg') }}" alt="My Photo" width="200">
+        </div>
     </div>
-    <div class="about-image">
-        <img src="{{ url_for('static', filename='profile_photo.jpg') }}" alt="My Photo" width="200">
-    </div>
-</div>
 </body>
+
 </html>

@@ -6,11 +6,22 @@
 </head>
 <body>
     <nav class="navbar">
-        <a href="/" class="nav-link">Homepage</a>
-        <a href="/projects/" class="nav-link">Projects</a>
-        <a href="/contact/" class="nav-link">Contact</a>
+        <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Homepage</a>
+        <a href="/projects/" class="nav-link {% if request.path == '/projects/' %}active{% endif %}">Projects</a>
+        <a href="/contact/" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
     </nav>
-    <h1>Projects Page</h1>
-    <a href="/">Back to Home</a>
+    <div class="content">
+        <h1>Projects</h1>
+        <h2>Published Papers</h2>
+        <ul>
+            <li><a href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.5.114308" target="_blank">Preferential concentration in the particle-induced convective instability (2020)</a></li>
+            <li><a href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.6.104303" target="_blank">Preferential concentration by mechanically driven turbulence in the two-fluid formalism (2021)</a></li>
+        </ul>
+        <h2>Dissertation</h2>
+        <ul>
+            <li><a href="https://escholarship.org/uc/item/7p42x8gq" target="_blank">Preferential concentration of heavy inertial particles using the two-fluid equations
+</a></li>
+        </ul>
+    </div>
 </body>
 </html>
