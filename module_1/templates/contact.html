@@ -8,22 +8,26 @@
 
 <body>
     <nav class="navbar">
-        <a href="/" class="nav-link">Homepage</a>
-        <a href="/projects/" class="nav-link">Projects</a>
-        <a href="/contact/" class="nav-link">Contact</a>
+        <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">About Me</a>
+        <a href="/projects/" class="nav-link {% if request.path == '/projects/' %}active{% endif %}">Projects</a>
+        <a href="/contact/" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
     </nav>
-    <h1>Contact Page</h1>
-    <p>
-        Feel free to reach out to me through email or connect with me on LinkedIn.
-    </p>
-    <ul>
-        <li>Email: <a href="mailto:snasab1@jh.edu">snasab1@jh.edu</a></li>
-        <li>
-            <a href="https://www.linkedin.com/in/sara-nasab/" target="_blank" rel="noopener noreferrer">
-                LinkedIn
-            </a>
-        </li>
-    </ul>
+    <div class="content">
+        <h1>Contact Page</h1>
+        <p>
+            Feel free to reach out to me through email or connect with me on LinkedIn.
+        </p>
+        <div class="contact-info">
+            <div class="contact-item" style="padding-left: 2em;">
+                <span class="icon">📧</span>
+                <a href="mailto:snasab1@jh.edu">snasab1@jh.edu</a>
+            </div>
+            <div class="contact-item" style="padding-left: 2em;">
+                <span class="icon">🌐</span>
+                <a href="https://www.linkedin.com/in/sara-nasab/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

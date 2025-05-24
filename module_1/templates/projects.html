@@ -1,37 +1,54 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Projects</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
     <nav class="navbar">
-        <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Homepage</a>
+        <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">About Me</a>
         <a href="/projects/" class="nav-link {% if request.path == '/projects/' %}active{% endif %}">Projects</a>
         <a href="/contact/" class="nav-link {% if request.path == '/contact/' %}active{% endif %}">Contact</a>
     </nav>
     <div class="content">
         <h1>Projects</h1>
         <h2>Module 1: Creating a Web Application with Flask</h2>
-<p>
-    <a href="https://github.com/snasab1/jhu_software_concepts/tree/main/module_1" target="_blank" rel="noopener noreferrer">
-        View on GitHub
-    </a>
-</p>
-<p>
-    This project demonstrates how to build a basic web application using the Flask framework in Python. 
-    It features a homepage, a contact page, and a projects page, all styled with custom CSS. 
-</p>
-        <h2>Published Papers</h2>
+        <p>
+            This project demonstrates how to build a basic web application using the Flask framework in Python.
+            It features a homepage, a contact page, and a projects page, all styled with custom CSS.
+        </p>
         <ul>
-            <li><a href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.5.114308" target="_blank">Preferential concentration in the particle-induced convective instability (2020)</a></li>
-            <li><a href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.6.104303" target="_blank">Preferential concentration by mechanically driven turbulence in the two-fluid formalism (2021)</a></li>
+            <li><a href="https://github.com/snasab1/jhu_software_concepts/tree/main/module_1" target="_blank"
+                rel="noopener noreferrer">
+                View on GitHub</a>
+                - (Note that this repo is private, so only collaborators have access to it)</li>
+            </li>
+            
         </ul>
-        <h2>Dissertation</h2>
+        <br>
+        <h2>Published Academic Works</h2>
+        <p>If you're interested in exploring the fluid dynamics research I did during my PhD, feel free to check out the links below to learn more.</p>        
+        <h3>Selected Papers</h3>
         <ul>
-            <li><a href="https://escholarship.org/uc/item/7p42x8gq" target="_blank">Preferential concentration of heavy inertial particles using the two-fluid equations
-</a></li>
+            <li><a href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.5.114308"
+                    target="_blank">Preferential concentration in the particle-induced convective instability (2020)</a>
+            </li>
+            <li><a href="https://journals.aps.org/prfluids/abstract/10.1103/PhysRevFluids.6.104303"
+                    target="_blank">Preferential concentration by mechanically driven turbulence in the two-fluid
+                    formalism (2021)</a></li>
+        </ul>
+
+
+
+        <h3>Dissertation</h3>
+        <ul>
+            <li><a href="https://escholarship.org/uc/item/7p42x8gq" target="_blank">Preferential concentration of heavy
+                    inertial particles using the two-fluid equations (2021)
+                </a></li>
         </ul>
     </div>
 </body>
+
 </html>
