@@ -65,12 +65,12 @@ a:active {
 } 
 
 a:visited {
-    color: hsl(318, 100%, 75%);
+    color: hsl(318, 100%, 75%) !important;
 }
 
-body a:visited {
+/*body a:visited {
     color: hsl(318, 100%, 75%);
-}
+}*/
 
 /* Change color after link is visited */
 .nav-link:visited {
