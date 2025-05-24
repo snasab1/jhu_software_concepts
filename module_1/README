@@ -1,8 +1,59 @@
-# Activate virtual environemnt 
-source venv/bin/activate 
+# Flask Blueprint Web App
+A simple modular Flask web application using Blueprints, with pages for About Me, Projects, and Contact. Styled with custom CSS and organized for easy extension.
 
-# Install requirements 
-pip install -r requirements.txt
+## Requirements
+- Python 3.10+
+- Flask (see `requirements.txt` for specific version)
 
-# Run script for web application
-python run.py
+## Setup Instructions
+
+1. **Create a virtual environment** (if not already created):
+   
+   ```zsh
+   python3 -m venv venv
+   ```
+
+2. **Activate the virtual environment**:
+   
+   ```zsh
+   source venv/bin/activate
+   ```
+
+3. **Install requirements**:
+   
+   ```zsh
+   pip install -r requirements.txt
+   ```
+
+4. **Run the web application**:
+   
+   ```zsh
+   python run.py
+   ```
+
+5. **Open your browser** and go to [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+
+## Project Structure
+
+```
+module_1/
+├── main/
+│   ├── __init__.py
+│   └── routes.py
+├── static/
+│   ├── style.css
+│   └── profile_photo.jpg
+├── templates/
+│   ├── index.html
+│   ├── projects.html
+│   └── contact.html
+├── requirements.txt
+├── run.py
+└── README
+```
+
+---
+
+To deactivate the virtual environment, run: `deactivate`
+
+You can customize the content and styling in the `templates/` and `static/` folders.

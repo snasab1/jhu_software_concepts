@@ -3,6 +3,9 @@ from .routes import main
 import os
 
 def create_app():
+    # Application factory for the Flask app.
+    # Sets up template and static folder paths and registers Blueprints.
+    #
     # NOTE: The template_folder and static_folder paths are set explicitly
     # because our 'templates' and 'static' directories are located one level
     # above this file (outside the 'main' package). This ensures Flask can
