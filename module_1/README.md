@@ -57,3 +57,30 @@ module_1/
 To deactivate the virtual environment, run: `deactivate`
 
 You can customize the content and styling in the `templates/` and `static/` folders.
+
+## Troubleshooting
+
+If you see errors like `ModuleNotFoundError: No module named 'Flask'` after activating your virtual environment and installing requirements:
+
+1. **Make sure your virtual environment is activated:**
+   ```zsh
+   source venv/bin/activate
+   ```
+
+2. **Check that you are using the correct Python and pip:**
+   ```zsh
+   which python
+   which pip
+   ```
+   Both should point to the `venv` directory inside your project.
+
+3. **If problems persist, try recreating the virtual environment:**
+   ```zsh
+   deactivate
+   rm -rf venv
+   python3 -m venv venv
+   source venv/bin/activate
+   pip install -r requirements.txt
+   ```
+
+This will ensure you have a clean environment with all required packages.
