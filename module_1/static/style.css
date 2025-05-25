@@ -2,12 +2,13 @@ body {
     background: #f0f4f8;
     color: #222;
     font-family: Arial, sans-serif;
-    font-size: 18px; /* Increased general font size */
+    font-size: 18px; 
 }
 h1 {
     color: #005f73;
 }
 
+/* Set spacing between headers */
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0.5em;
 }
@@ -37,6 +38,7 @@ a:active {
     color: #222;
 }
 
+/* Navbar link styles (font, spacing, etc.) */
 .nav-link {
     color: #fff;
     margin: 0 1.5em;
@@ -56,19 +58,16 @@ a:active {
     color: #222;
 } 
 
-a:visited {
-    color: hsl(318, 100%, 75%) !important;
-}
-
-/* Change color after link is visited */
-.nav-link:visited {
-    color: hsl(318, 100%, 75%) ;
+.nav-link.active {
+    background: #94d2bd;
+    color: #222;
 }
 
 body {
     padding-top: 4em; /* Add space so content isn't hidden under navbar */
 }
 
+/* Creating about section styles */
 .about-container {
     display: flex;
     align-items: flex-start;
