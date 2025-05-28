@@ -1,0 +1,52 @@
+[
+  {
+    "University": "Purdue University",
+    "Program Name": "Mechanical EngineeringPhD",
+    "Applicant Status": "Rejected"
+  },
+  {
+    "University": "Osmania University",
+    "Program Name": "Computer ScienceMasters",
+    "Applicant Status": "Accepted"
+  },
+  {
+    "University": "McGill University",
+    "Program Name": "Mathematics and StatisticsMasters",
+    "Applicant Status": "Rejected"
+  },
+  {
+    "University": "Illinois Institute of Technology",
+    "Program Name": "Mechanical And Aerospace EngineeringPhD",
+    "Applicant Status": "Rejected"
+  },
+  {
+    "University": "University of Texas at Dallas",
+    "Program Name": "Mechanical EngineeringPhD",
+    "Applicant Status": "Accepted"
+  },
+  {
+    "University": "Rensselaer Polytechnic Institute",
+    "Program Name": "Mechanical EngineeringPhD",
+    "Applicant Status": "Rejected"
+  },
+  {
+    "University": "Purdue University",
+    "Program Name": "Industrial EngineeringMasters",
+    "Applicant Status": "Accepted"
+  },
+  {
+    "University": "University of Waterloo",
+    "Program Name": "PlanningMasters",
+    "Applicant Status": "Rejected"
+  },
+  {
+    "University": "University of Cincinnati",
+    "Program Name": "PhysicsPhD",
+    "Applicant Status": "Rejected"
+  },
+  {
+    "University": "University of California Riverside (UCR)",
+    "Program Name": "PhysicsPhD",
+    "Applicant Status": "Rejected"
+  }
+]
