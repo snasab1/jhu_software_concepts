@@ -3,55 +3,30 @@ from urllib.request import urlopen
 import json
 import re
 
-url = "http://thegradcafe.com/survey/index.php"
+url_base = "http://thegradcafe.com/survey/index.php"
 
-def scrape_data(url, limit=10):
-    page = urlopen(url)
-    html = page.read().decode("utf-8")
-    soup = BeautifulSoup(html, "html.parser")
-    entries = []
-    table = soup.find("table")
-    if not table:
-        return entries
-    rows = table.find_all("tr")[1:]  # skip header
-    count = 0
-    for row in rows:
-        if count >= limit:
-            break
-        cols = row.find_all("td")
-        if len(cols) < 5:
-            continue
-        university = cols[0].get_text(strip=True)
-        program = cols[1].get_text(strip=True)
-        status_text = cols[3].get_text(strip=True)
-        date = cols[4].get_text(strip=True)
-        if "Accepted" in status_text:
-            status = "Accepted"
-        elif "Rejected" in status_text:
-            status = "Rejected"
+def scrape_data(url_base, pages=10): # Edit the number of pages as needed
+    html_pages = []
+    for page_num in range(1, pages + 1):
+        if page_num == 1:
+            url = url_base
         else:
-            status = status_text
-        entries.append({
-            "University": university,
-            "Program Name": program,
-            "Applicant Status": status,
-        })
-        count += 1
-    return entries
+            url = f"{url_base}?page={page_num}"
+        print(f"Fetching HTML from: {url}")
+        page = urlopen(url)
+        html = page.read().decode("utf-8")
+        html_pages.append(html)
+    return html_pages
 
-def clean_data(data):
-    # For this simple case, assume data is already clean
-    return data
-
-def save_data(data, filename):
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=2)
-
-def main():
-    raw_data = scrape_data(url, limit=10)
-    cleaned = clean_data(raw_data)
-    save_data(cleaned, "applicant_data.json")
-    print(f"Saved {len(cleaned)} entries to applicant_data.json")
+def main():  
+    html_pages = scrape_data(url_base, pages=10)
+    print(f"Fetched {len(html_pages)} HTML pages for parsing.")
+    # Save all HTML pages as one file
+    with open("all_pages.html", "w", encoding="utf-8") as f:
+        for html in html_pages:
+            f.write(html)
+            f.write("\n<!-- PAGE BREAK -->\n")  # Optional: add a marker between pages
+    print("Saved all HTML pages to all_pages.html")
 
 if __name__ == "__main__":
     main()
