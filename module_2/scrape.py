@@ -4,6 +4,7 @@ import re
 
 def scrape_data(url_base, pages):
     html_pages = []
+    print(f"Scraping data from {url_base} for {pages} pages.")
     for page_num in range(1, pages + 1):
         if page_num == 1:
             url = url_base

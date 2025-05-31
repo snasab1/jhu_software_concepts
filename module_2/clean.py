@@ -1,6 +1,4 @@
-from bs4 import BeautifulSoup
-import re
-import json
+import re, json
 
 def save_data(data, filename):
     with open(filename, "w", encoding="utf-8") as f:
@@ -10,8 +8,8 @@ def load_data(filename):
     with open(filename, "r", encoding="utf-8") as f:
         return json.load(f)
     
-def clean_data(filename):
-    data = load_data(filename)
+def clean_data(input_filename, output_filename):
+    data = load_data(input_filename)
     program_types = ["PhD", "Masters", "MFA", "MBA", "JD", "EdD", "Other", "PsyD"]
     pattern = re.compile(rf"({'|'.join(program_types)})$")
     for applicant in data:
@@ -26,5 +24,5 @@ def clean_data(filename):
                 applicant["Program Type"] = prog_type
             else:
                 applicant["Program Type"] = None
-    save_data(data, filename)
+    save_data(data, output_filename)
 
