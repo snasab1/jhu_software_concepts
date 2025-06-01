@@ -40,7 +40,7 @@ def main():
     url_base = "http://thegradcafe.com/survey/index.php"
     applicant_file_raw = "applicant_data_raw.json" # Raw JSON file
     applicant_file_cleaned = "applicant_data.json" # Cleaned JSON file
-    min_count = 20000 # Minimum number of applicants requested
+    min_count = 15000 # Minimum number of applicants requested
 
     # To save time, check if the raw JSON file exists and contains at least the minimum number of applicants. If so, skip the scraping step and proceed directly to data cleaning.
     if os.path.exists(applicant_file_raw):
