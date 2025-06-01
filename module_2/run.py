@@ -60,6 +60,7 @@ def main():
         print(f"Web crawling is allowed for: {url_base}\n")
     else:
         print(f"Web crawling is not allowed for: {url_base}\n")
+        return # Exit the program if crawling is not allowed
 
     # Determine the number of pages to scrape 
     applicants_per_page = 20 
