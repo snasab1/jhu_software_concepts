@@ -57,6 +57,17 @@ def clean_data(input_filename, output_filename):
             else:
                 applicant["Program Type"] = None
 
+        # Convert "Added On" to YYYY-MM-DD format
+        added_on = applicant.get("Added On")
+        if added_on:
+            try:
+                # Parse formats like "May 31, 2025"
+                dt = datetime.strptime(added_on, "%b %d, %Y")
+                applicant["Added On"] = dt.strftime("%Y-%m-%d")
+            except Exception:
+                # If parsing fails, set to None or leave as is
+                applicant["Added On"] = None
+
         # Get rid of any line breaks in the comments
         comments = applicant.get("Comments")
         if comments is not None:
