@@ -1,6 +1,6 @@
 from urllib import request, parse
 from bs4 import BeautifulSoup
-import re
+import re, time
 
 def scrape_data(url_base, pages):
     """
@@ -24,6 +24,12 @@ def scrape_data(url_base, pages):
         page = request.urlopen(url)
         html = page.read().decode("utf-8")
         html_pages.append(html)
+
+        # Pause every 50 scrapes
+        if page_num % 50 == 0:
+            print(f"Pausing for 1 second after {page_num} pages...")
+            time.sleep(1)
+
     return html_pages
 
 def _extract_specs(text):
@@ -39,6 +45,10 @@ def _extract_specs(text):
     # Extract Applicant Type
     if "International" in text:
         specs["Applicant Type"] = "International"
+    elif "American" in text:
+        specs["Applicant Type"] = "American"
+    elif "Other" in text:
+        specs["Applicant Type"] = "Other"
     else:
         specs["Applicant Type"] = None
     # Extract GRE
