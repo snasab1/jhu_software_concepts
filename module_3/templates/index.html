@@ -1,0 +1,19 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Applicant Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Applicant Statistics</h1>
+        {% for qa in questions_and_answers %}
+        <div class="qa-card">
+            <div class="question">{{ qa.question }}</div>
+            <div class="answer">{{ qa.answer }}</div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
