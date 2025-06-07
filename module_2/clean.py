@@ -57,6 +57,48 @@ def clean_data(input_filename, output_filename):
             else:
                 applicant["Program Type"] = None
 
+        # --- GRE cleaning ---
+        gre_val = applicant.get("GRE")
+        try:
+            gre_num = float(gre_val)
+            if not (260 <= gre_num <= 340):
+                applicant["GRE"] = None
+            else:
+                applicant["GRE"] = str(int(gre_num)) if gre_num.is_integer() else str(gre_num)
+        except (TypeError, ValueError):
+            applicant["GRE"] = None
+
+        gre_v_val = applicant.get("GRE V")
+        try:
+            gre_v_num = float(gre_v_val)
+            if not (130 <= gre_v_num <= 170):
+                applicant["GRE V"] = None
+            else:
+                applicant["GRE V"] = str(int(gre_v_num)) if gre_v_num.is_integer() else str(gre_v_num)
+        except (TypeError, ValueError):
+            applicant["GRE V"] = None
+
+        gre_aw_val = applicant.get("GRE AW")
+        try:
+            gre_aw_num = float(gre_aw_val)
+            if not (0 <= gre_aw_num <= 6):
+                applicant["GRE AW"] = None
+            else:
+                applicant["GRE AW"] = str(gre_aw_num)
+        except (TypeError, ValueError):
+            applicant["GRE AW"] = None
+
+        # --- GPA cleaning ---
+        gpa_val = applicant.get("GPA")
+        try:
+            gpa_num = float(gpa_val)
+            if not (0 <= gpa_num <= 5.0):
+                applicant["GPA"] = None
+            else:
+                applicant["GPA"] = str(gpa_num)
+        except (TypeError, ValueError):
+            applicant["GPA"] = None
+
         # Convert "Added On" to YYYY-MM-DD format
         added_on = applicant.get("Added On")
         if added_on:
