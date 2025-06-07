@@ -31,8 +31,7 @@ def execute_and_fetch(query, params=None, fetch_one=True):
 # --- Private Helper Function ---
 def _get_result(query, params=None):
     """
-    Executes a query expected to return a single count and safely extracts it.
-    This is a private helper function, typically not called directly from outside.
+    Executes a query expected to return a single value and safely extracts it.
 
     Args:
         query (str): The SQL query string (e.g., "SELECT COUNT(*) FROM ...").
