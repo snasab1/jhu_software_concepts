@@ -1,13 +1,5 @@
 from flask import Flask, render_template
-from query_data import (
-    total_applicants_fall_2024,
-    percent_international,
-    average_GPA_and_GRE,
-    average_gpa_american_fall_2024,
-    acceptance_percentage_fall_2024,
-    average_gpa_accepted_fall_2024,
-    jhu_applicants_masters_CS,
-)
+from query_data import *
 
 app = Flask(__name__)
 
