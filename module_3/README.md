@@ -1,4 +1,4 @@
-# Week 3: SQL Data Analysis
+# Module 3: SQL Data Analysis
 
 **Name:** Sara Nasab  
 **Email:** snasab1@jh.edu  
@@ -8,13 +8,14 @@
 ---
 
 ## Project Overview
+**Disclaimer: Please pull in the updated `applicant_data.json` when replicating/verifying the results of this module. It has been updated as explained in the paragraph below.**
 
 This project analyzes graduate admissions data using SQL and Python.  
 **Note:** The SQL queries are based on the JSON data file generated from Module 2 (Grad Cafe data) which has been updated and can be found within the `module_2` directory. This current version has been updated to reflect **valid** range of scores (GPA, GRE); the user submitted scores that do not fall within the valid range are not recorded (replaced with None). Additionally, this version includes all available Applicant Type (i.e., American, International, Other); before, only International students were recorded.  The changes are reflected in scrape.py and clean.py. 
 
 ---
 
-## Instructions for Use (Module 3)
+## Instructions 
 
 1. **Create the Database:**
    - Run `create_applicants_data_db.py` to create the PostgreSQL database and table structure. This will not work if the database has already been created. 
