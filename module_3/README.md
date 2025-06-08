@@ -21,7 +21,7 @@ This project analyzes graduate admissions data using SQL and Python.
 
 2. **Populate the Database:**
    - Use `load_data.py` to load data from `applicant_data.json` (from Module 2) into your database.
-   - The database will be populated with the number of applicants found in `applicant_data.json` (15,000 applicants).
+   - The database will be populated with the number of applicants found in `applicant_data.json` (15,000 applicants). 
 
 3. **Run SQL Queries:**
    - Use `query_data.py` to run SQL queries and obtain statistics about the applicants. For the reasoning of SQL query choice, refer to `desciptions_sqlqueries.pdf`. 
