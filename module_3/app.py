@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from query_data import *
+from query_data import * # Import SQL query functions
 
 app = Flask(__name__)
 
