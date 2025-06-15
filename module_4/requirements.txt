@@ -1,1 +1,5 @@
 pytest==8.2.2
+
+# Sphinx and documentation dependencies
+sphinx
+sphinx-rtd-theme 
