@@ -2,9 +2,9 @@
 Module 5: Query Data - contains functions to query applicant data from a PostgreSQL database.
 """
 import psycopg
-from psycopg import sql, Error 
+from psycopg import sql, Error
 
-# pylint: disable=no-member 
+# pylint: disable=no-member
 
 # --- Database Connection Parameters ---
 DB_HOST = "localhost"
@@ -54,6 +54,10 @@ def _get_result(query, params=None):
     # Return the first element if result is not None and not empty, otherwise None
     return result[0] if result else None
 
+# For the following functions: each query and queries within it, inherently return
+# single rows (counts). Already satisfies the 'inherent limit of 1' requirement for
+# Module 5 homework. Nothing more is needed to do.
+
 def total_applicants_fall_2024():
     """Counts the total number of applicants for the 'Fall 2024' term."""
     # Using sql.SQL and sql.Identifier for safe query composition
@@ -61,7 +65,7 @@ def total_applicants_fall_2024():
         sql.Identifier(TABLE_NAME)
     )
     count = _get_result(query_composed, ("Fall 2024",))
-    return count if count is not None else 0 # Return int, not formatted string
+    return count if count is not None else 0
 
 def percent_international():
     """Calculates the percentage of international applicants."""
@@ -70,17 +74,18 @@ def percent_international():
     )
     total = _get_result(query_total_composed)
     if total is None or total == 0:
-        return 0.0 # Return 0.0 as a float for no applicants
+        return 0.0
 
-    query_international_composed = sql.SQL("SELECT COUNT(*) FROM {} WHERE us_or_international = %s;").format(
+    query_international_composed = \
+        sql.SQL("SELECT COUNT(*) FROM {} WHERE us_or_international = %s;").format(
         sql.Identifier(TABLE_NAME)
     )
     intl = _get_result(query_international_composed, ("International",))
     if intl is None:
-        intl = 0 # Ensure intl is a number for calculation
+        intl = 0
 
-    percent = (intl / total * 100)
-    return percent # Return float, not formatted string
+    percent = intl / total * 100
+    return percent
 
 def average_gpa_and_gre():
     """
@@ -102,12 +107,13 @@ def average_gpa_and_gre():
         sql.Identifier(TABLE_NAME)
     )
     avg_gre_v = _get_result(query_avg_gre_v_composed) or 0.0
-    
-    query_avg_gre_aw_composed = sql.SQL("SELECT AVG(gre_aw) FROM {} WHERE gre_aw IS NOT NULL;").format(
+
+    query_avg_gre_aw_composed = \
+        sql.SQL("SELECT AVG(gre_aw) FROM {} WHERE gre_aw IS NOT NULL;").format(
         sql.Identifier(TABLE_NAME)
     )
     avg_gre_aw = _get_result(query_avg_gre_aw_composed) or 0.0
-    
+
     return {
         "gpa": avg_gpa,
         "gre_total": avg_gre,
@@ -126,7 +132,7 @@ def average_gpa_american_fall_2024():
         sql.Identifier(TABLE_NAME)
     )
     avg_gpa = _get_result(query_composed, ("Fall 2024", "American"))
-    return avg_gpa if avg_gpa is not None else 0.0 
+    return avg_gpa if avg_gpa is not None else 0.0
 
 def acceptance_percentage_fall_2024():
     """Calculates the acceptance percentage for the 'Fall 2024' term."""
@@ -135,9 +141,10 @@ def acceptance_percentage_fall_2024():
     )
     total = _get_result(query_total_composed, ("Fall 2024",))
     if total is None or total == 0:
-        return 0.0 
+        return 0.0
 
-    query_accepted_composed = sql.SQL("SELECT COUNT(*) FROM {} WHERE term = %s AND status LIKE %s;").format(
+    query_accepted_composed = \
+        sql.SQL("SELECT COUNT(*) FROM {} WHERE term = %s AND status LIKE %s;").format(
         sql.Identifier(TABLE_NAME)
     )
     accepted = _get_result(query_accepted_composed, ("Fall 2024", "%Accepted%"))
@@ -145,7 +152,7 @@ def acceptance_percentage_fall_2024():
         accepted = 0 # Ensure accepted is a number for calculation
 
     percent = accepted / total * 100
-    return percent 
+    return percent
 
 def average_gpa_accepted_fall_2024():
     """Calculates the average GPA of 'Accepted' applicants for the 'Fall 2024' term."""
@@ -158,7 +165,7 @@ def average_gpa_accepted_fall_2024():
         sql.Identifier(TABLE_NAME)
     )
     avg_gpa = _get_result(query_composed, ("Fall 2024", "%Accepted%"))
-    return avg_gpa if avg_gpa is not None else 0.0 
+    return avg_gpa if avg_gpa is not None else 0.0
 
 def jhu_applicants_masters_cs():
     """Counts the number of Johns Hopkins applicants for a Master's in Computer Science."""
@@ -171,4 +178,4 @@ def jhu_applicants_masters_cs():
     )
     # Changed "%Mas%" to "%Master%" for broader match, assuming this is intended
     count = _get_result(query_composed, ("%Johns%Hopkins%Comp%Sci%", "%Master%"))
-    return count if count is not None else 0 
+    return count if count is not None else 0
