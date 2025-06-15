@@ -1,4 +1,3 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +10,20 @@
         {% for qa in questions_and_answers %}
         <div class="qa-card">
             <div class="question">{{ qa.question }}</div>
-            <div class="answer">{{ qa.answer }}</div>
+            <div class="answer">
+                {# Check if the answer is a dictionary (specifically for average_gpa_and_gre) #}
+                {% if qa.answer is mapping %}
+                    <ul>
+                        <li>GPA: {{ qa.answer.gpa|round(2) }}</li>
+                        <li>GRE Total: {{ qa.answer.gre_total|round(2) }}</li>
+                        <li>GRE Verbal: {{ qa.answer.gre_verbal|round(2) }}</li>
+                        <li>GRE Analytical Writing: {{ qa.answer.gre_analytical_writing|round(2) }}</li>
+                    </ul>
+                {% else %}
+                    {# For all other answers, display them as is #}
+                    {{ qa.answer }}
+                {% endif %}
+            </div>
         </div>
         {% endfor %}
     </div>
