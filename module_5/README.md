@@ -1,8 +1,7 @@
-# Module 3: SQL Data Analysis
+# Module 5: Software Assurance, Static Code Analysis, and SQL Injections
 
 **Name:** Sara Nasab  
 **Email:** snasab1@jh.edu  
-**Module:** Module 5: Software Assurance, Static Code Analysis, and SQL Injections
 **Due Date:** 6/15/2025
 
 ---
