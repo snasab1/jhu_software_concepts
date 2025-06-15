@@ -1,9 +1,12 @@
+"""
+The script loads applicant data from a JSON file into a PostgreSQL database.
+"""
 import json
 import psycopg
 
 # --- Database Connection Parameters ---
 DB_HOST = "localhost"
-DB_NAME = "applicant_data"  
+DB_NAME = "applicant_data"
 DB_USER = "postgres"
 DB_PASSWORD = ""
 
@@ -61,6 +64,9 @@ def map_json_to_sql(entry):
     }
 
 def main():
+    """
+    Main function to load data from JSON file into PostgreSQL database.
+    """
     # Load JSON data
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         data = json.load(f)
