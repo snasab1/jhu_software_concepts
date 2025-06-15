@@ -2,7 +2,7 @@ import pytest
 from src.order import Order 
 
 @pytest.mark.order
-def test_order__init__():
+def test__init__():
     """
     Test that Order.__init__ initializes correctly:
     - should include an empty list of pizza objects.
@@ -16,7 +16,7 @@ def test_order__init__():
     assert order.paid == False
 
 @pytest.mark.order
-def test_order__str__():
+def test__str__():
     """
     Testing Order.__str__: Returns a string containing customer full order and cost
     """
@@ -31,7 +31,7 @@ def test_order__str__():
     assert "Payment Status: Not Paid" in order_str
 
 @pytest.mark.order
-def test_order_input_pizza():
+def test_input_pizza():
     """
     Test that input_pizza() method updates the order's total cost.
     """
@@ -46,7 +46,7 @@ def test_order_input_pizza():
 
 
 @pytest.mark.order
-def test_order_paid():
+def test_paid():
     """
     Test that order_paid() method updates 'paid' to True.
     """
