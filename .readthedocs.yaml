@@ -1,22 +1,12 @@
-# .readthedocs.yaml
+# .readthedocs.yaml - MINIMAL CONFIG
 # Read the Docs configuration file
-# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
 version: 2
 
-# Set the version of Python and other tools you might need
 build:
   os: ubuntu-24.04
   tools:
-    python: "3.9" # Or your preferred Python version, e.g., "3.10", "3.11"
-  base_dir: module_4/source/
-  # You can also set a base directory for your documentation
-  # where conf.py and requirements.txt live
-  jobs:
-    pre_build:
-      - pip install -r requirements.txt # Ensure this path is correct
+    python: "3.9"
 
-# Sphinx configuration
-sphinx:
-  configuration: conf.py
-
+# All other configurations (like specific paths for conf.py, doc_dir, requirements.txt,
+# or build jobs) will be handled in the Read the Docs web UI.
