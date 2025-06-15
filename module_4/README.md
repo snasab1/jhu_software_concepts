@@ -11,18 +11,29 @@ This project maanages pizza orders and their associated costs.
 The project is organized as follows:
 
 ```
-src/
-  pizza.py        # Defines the Pizza class, including ingredient pricing and cost calculation.
-  order.py        # Defines the Order class, which manages multiple Pizza objects and the overall order state.
-  __init__.py     # (Empty file) Marks src as a Python package.
-
-tests/
-  test_order.py        # Unit tests specifically for the Order class.
-  test_pizza.py        # Unit tests specifically for the Pizza class.
-  test_integration.py  # Integration tests that verify interactions between Order and Pizza classes.
-  __init__.py          # (Empty file) Marks tests as a Python package.
-
-pytest.ini        # Configuration file for pytest, defining test markers and Python path settings.
+module_4/
+├── src/
+│   ├── pizza.py          # Defines the Pizza class, including ingredient pricing and cost calculation.
+│   ├── order.py          # Defines the Order class, which manages multiple Pizza objects and the overall order state.
+│   └── __init__.py       # (Empty file) Marks src as a Python package.
+│
+├── tests/
+│   ├── test_order.py         # Unit tests for the Order class.
+│   ├── test_pizza.py         # Unit tests for the Pizza class.
+│   ├── test_integration.py   # Integration tests for Order and Pizza together.
+│   └── __init__.py           # (Empty file) Marks tests as a Python package.
+│
+├── source/
+│   ├── conf.py           # Sphinx configuration file.
+│   ├── index.rst         # Main documentation source file for Sphinx.
+│   └── ...               # Other Sphinx/reST files.
+│
+├── _build/
+│   └── html/             # Generated HTML documentation from Sphinx (open index.html here).
+│
+├── pytest.ini            # Configuration file for pytest.
+├── README.md             # Project overview and instructions.
+└── requirements.txt      # Python dependencies for this module.
 ```
 
 ---
