@@ -1,0 +1,31 @@
+# .readthedocs.yaml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+version: 2
+
+# Set the version of Python and other tools you might need
+build:
+  os: ubuntu-latest
+  tools:
+    python: "3.9" # Or your preferred Python version, e.g., "3.10", "3.11"
+  # You can also set a base directory for your documentation
+  # where conf.py and requirements.txt live
+  jobs:
+    pre_build:
+      - pip install -r module_4/requirements.txt # Ensure this path is correct
+
+# Sphinx configuration
+sphinx:
+  configuration: module_4/conf.py
+
+# Optional: Indicate where your docs are. This helps with automatic detection.
+# This specifies the directory containing the 'conf.py' and 'index.rst' files
+# and is relative to the root of your repository.
+formats: [] # We don't need to specify formats, RTD handles this
+
+python:
+  install:
+    - method: pip
+      path: .
+      requirements: module_4/requirements.txt
