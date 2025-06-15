@@ -6,7 +6,7 @@ version: 2
 
 # Set the version of Python and other tools you might need
 build:
-  os: ubuntu-latest
+  os: ubuntu-24.04
   tools:
     python: "3.9" # Or your preferred Python version, e.g., "3.10", "3.11"
   # You can also set a base directory for your documentation
