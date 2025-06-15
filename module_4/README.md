@@ -54,4 +54,9 @@ This project uses **pytest** for testing, with markers to organize different tes
    pytest -m "order and pizza"
    ```
 
+## Documentation
+Open the `module_4/_build/html/index.html` file in your web browser.
+
+If you need to regenerate the documentation, run `make html` from the `module_4/source` directory (requires Sphinx to be installed).
+
 ---
