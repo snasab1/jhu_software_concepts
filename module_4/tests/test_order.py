@@ -26,8 +26,8 @@ def test_order__str__():
 
     order_str = str(order)
     assert "Customer Requested:" in order_str
-    assert "Crust: thin, Sauce: ['marinara'], Cheese: mozzarella, Toppings: ['pepperoni'], Cost: 8" in order_str # Updated cost
-    assert "Total Order Cost: 8.00" in order_str # Updated total cost
+    assert "Crust: thin, Sauce: ['marinara'], Cheese: mozzarella, Toppings: ['pepperoni'], Cost: 9" in order_str # Updated cost
+    assert "Total Order Cost: 9.00" in order_str # Updated total cost
     assert "Payment Status: Not Paid" in order_str
 
 @pytest.mark.order
@@ -38,11 +38,11 @@ def test_order_input_pizza():
     order = Order()
     # Add a pizza to the order
     order.input_pizza("thin", ["marinara"], "mozzarella", ["pepperoni"])
-    assert order.cost == 8.0 
+    assert order.cost == 9.0 
 
     # Add another pizza 
     order.input_pizza("thin", ["pesto"], "mozzarella", ["mushrooms"])
-    assert order.cost == 8.0 + 10.0 # Updated total cost
+    assert order.cost == 9.0 + 11.0 # Updated total cost
 
 
 @pytest.mark.order

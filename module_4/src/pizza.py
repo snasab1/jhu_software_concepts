@@ -19,6 +19,9 @@ class Pizza:
         'pepperoni': 2,
         'mushrooms': 3
     }
+    cheese_prices = {
+        'mozzarella': 0  # Cheese is free
+    }
 
     def __init__(self, crust, sauce, cheese, toppings):
         """
