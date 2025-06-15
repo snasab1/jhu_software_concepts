@@ -55,7 +55,9 @@ This project uses **pytest** for testing, with markers to organize different tes
    ```
 
 ## Documentation
-Open the `module_4/_build/html/index.html` file in your web browser.
+Public link: https://jhu-software-concepts-rtd.readthedocs.io/en/latest/
+
+HTML in repo: Open the `module_4/_build/html/index.html` file in your web browser.
 
 If you need to regenerate the documentation, run `make html` from the `module_4/source` directory (requires Sphinx to be installed).
 
