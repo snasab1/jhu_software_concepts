@@ -1,4 +1,6 @@
 # Module 4: Pizza Ordering System
+**Author:** Sara Nasab  
+**Email:** snasab1@jh.edu
 
 This project maanages pizza orders and their associated costs.
 
