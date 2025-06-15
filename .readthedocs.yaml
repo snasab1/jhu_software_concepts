@@ -1,5 +1,6 @@
-# .readthedocs.yaml - MINIMAL CONFIG
+# .readthedocs.yaml
 # Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
 
 version: 2
 
@@ -7,6 +8,15 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.9"
+  jobs:
+    pre_build:
+      # This path is relative to the repository root
+      - pip install -r module_4/requirements.txt
 
-# All other configurations (like specific paths for conf.py, doc_dir, requirements.txt,
-# or build jobs) will be handled in the Read the Docs web UI.
+sphinx:
+  # This path is relative to the repository root
+  configuration: module_4/source/conf.py
+
+# IMPORTANT: We are intentionally NOT including 'doc_dir' or 'base_dir' here
+# because they caused 'Invalid configuration key' errors.
+# We will set the equivalent in the Read the Docs web UI.
