@@ -44,11 +44,7 @@
               <div class="local-toc"><ul>
 <li><a class="reference internal" href="#">Module 4: Pizza Ordering System documentation</a><ul>
 <li><a class="reference internal" href="#src.pizza.Pizza"><code class="docutils literal notranslate"><span class="pre">Pizza</span></code></a><ul>
-<li><a class="reference internal" href="#src.pizza.Pizza.cheese_prices"><code class="docutils literal notranslate"><span class="pre">Pizza.cheese_prices</span></code></a></li>
 <li><a class="reference internal" href="#src.pizza.Pizza.cost"><code class="docutils literal notranslate"><span class="pre">Pizza.cost()</span></code></a></li>
-<li><a class="reference internal" href="#src.pizza.Pizza.crust_prices"><code class="docutils literal notranslate"><span class="pre">Pizza.crust_prices</span></code></a></li>
-<li><a class="reference internal" href="#src.pizza.Pizza.sauce_prices"><code class="docutils literal notranslate"><span class="pre">Pizza.sauce_prices</span></code></a></li>
-<li><a class="reference internal" href="#src.pizza.Pizza.topping_prices"><code class="docutils literal notranslate"><span class="pre">Pizza.topping_prices</span></code></a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#src.order.Order"><code class="docutils literal notranslate"><span class="pre">Order</span></code></a><ul>
@@ -86,39 +82,34 @@
              
   <section id="module-4-pizza-ordering-system-documentation">
 <h1>Module 4: Pizza Ordering System documentation<a class="headerlink" href="#module-4-pizza-ordering-system-documentation" title="Link to this heading"></a></h1>
-<p>Add your content using <code class="docutils literal notranslate"><span class="pre">reStructuredText</span></code> syntax. See the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html">reStructuredText</a>
-documentation for details.</p>
+<p>Pulling comments from the source code using Sphinx and Read the Docs theme.</p>
 <dl class="py class" id="module-src.pizza">
 <dt class="sig sig-object py" id="src.pizza.Pizza">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.pizza.</span></span><span class="sig-name descname"><span class="pre">Pizza</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crust</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sauce</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cheese</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toppings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.pizza.Pizza" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Class pizza with crust, sauce, and topping (cheese is free!). Calculates cost.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.pizza.Pizza.cheese_prices">
-<span class="sig-name descname"><span class="pre">cheese_prices</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'mozzarella':</span> <span class="pre">0}</span></em><a class="headerlink" href="#src.pizza.Pizza.cheese_prices" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
+<p>Represents a customizable pizza with crust, sauce(s), cheese, and toppings.</p>
+<p>This class allows you to specify the type of crust, one or more sauces, cheese, and a list of toppings.
+It validates the inputs, stores the pizza configuration, and can calculate the total cost based on the selected ingredients.</p>
+<p>Attributes:</p>
+<dl class="simple">
+<dt>crust<span class="classifier">str</span></dt><dd><p>The type of crust (e.g., ‘thin’, ‘thick’, ‘gluten_free’).</p>
+</dd>
+<dt>sauce<span class="classifier">list</span></dt><dd><p>List of sauces (e.g., [‘marinara’, ‘pesto’]).</p>
+</dd>
+<dt>cheese<span class="classifier">str</span></dt><dd><p>The type of cheese (currently only ‘mozzarella’ is supported).</p>
+</dd>
+<dt>toppings<span class="classifier">list </span></dt><dd><p>List of toppings (e.g., [‘pineapple’, ‘pepperoni’]).</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.pizza.Pizza.cost">
 <span class="sig-name descname"><span class="pre">cost</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#src.pizza.Pizza.cost" title="Link to this definition"></a></dt>
-<dd><p>Determine the cost of a pizza</p>
+<dd><p>Calculate and return the total cost of the pizza based on prices of the crust, sauces, cheese, and toppings.</p>
+<dl class="simple">
+<dt>Returns:</dt><dd><p>int: The total cost of the pizza in dollars.</p>
+</dd>
+</dl>
 </dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.pizza.Pizza.crust_prices">
-<span class="sig-name descname"><span class="pre">crust_prices</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'gluten_free':</span> <span class="pre">8,</span> <span class="pre">'thick':</span> <span class="pre">6,</span> <span class="pre">'thin':</span> <span class="pre">5}</span></em><a class="headerlink" href="#src.pizza.Pizza.crust_prices" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.pizza.Pizza.sauce_prices">
-<span class="sig-name descname"><span class="pre">sauce_prices</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'liv_sauce':</span> <span class="pre">5,</span> <span class="pre">'marinara':</span> <span class="pre">2,</span> <span class="pre">'pesto':</span> <span class="pre">3}</span></em><a class="headerlink" href="#src.pizza.Pizza.sauce_prices" title="Link to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="src.pizza.Pizza.topping_prices">
-<span class="sig-name descname"><span class="pre">topping_prices</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'mushrooms':</span> <span class="pre">3,</span> <span class="pre">'pepperoni':</span> <span class="pre">2,</span> <span class="pre">'pineapple':</span> <span class="pre">1}</span></em><a class="headerlink" href="#src.pizza.Pizza.topping_prices" title="Link to this definition"></a></dt>
-<dd></dd></dl>
 
 </dd></dl>
 
@@ -126,8 +117,17 @@ documentation for details.</p>
 <dt class="sig sig-object py" id="src.order.Order">
 <em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.order.</span></span><span class="sig-name descname"><span class="pre">Order</span></span><a class="headerlink" href="#src.order.Order" title="Link to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Defines customer’s order with one or more pizza objects
-and tracks the total cost and payment status.</p>
+<p>Represents a customer’s pizza order, which may include one or more pizzas.</p>
+<p>The Order class manages a list of Pizza objects, tracks the total cost of the order and whether the order has been paid for.</p>
+<p>Attributes:</p>
+<dl class="simple">
+<dt>pizzas<span class="classifier">list </span></dt><dd><p>List of Pizza objects included in the order.</p>
+</dd>
+<dt>cost<span class="classifier">float</span></dt><dd><p>The cost of pizzas in the order.</p>
+</dd>
+<dt>paid<span class="classifier">bool</span></dt><dd><p>Payment status of the order (True if paid, False otherwise).</p>
+</dd>
+</dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="src.order.Order.input_pizza">
 <span class="sig-name descname"><span class="pre">input_pizza</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">crust</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sauce</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cheese</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">toppings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#src.order.Order.input_pizza" title="Link to this definition"></a></dt>

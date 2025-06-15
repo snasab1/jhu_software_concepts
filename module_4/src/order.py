@@ -2,8 +2,19 @@ from src.pizza import Pizza
 
 class Order:
     """
-    Defines customer's order with one or more pizza objects
-    and tracks the total cost and payment status.
+    Represents a customer's pizza order, which may include one or more pizzas.
+
+    The Order class manages a list of Pizza objects, tracks the total cost of the order and whether the order has been paid for.
+
+    Attributes:
+
+    pizzas : list 
+        List of Pizza objects included in the order.
+    cost : float
+        The cost of pizzas in the order.
+    paid : bool
+        Payment status of the order (True if paid, False otherwise).
+
     """
     def __init__(self):
         """

@@ -12,6 +12,7 @@ Pulling comments from the source code using Sphinx and Read the Docs theme.
    :members:
    :undoc-members:
    :show-inheritance:
+   :exclude-members: crust_prices, sauce_prices, topping_prices, cheese_prices
 
 .. automodule:: src.order
    :members:

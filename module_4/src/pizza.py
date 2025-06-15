@@ -1,6 +1,22 @@
 class Pizza:
     """
-    Class pizza with crust, sauce, and topping (cheese is free!). Calculates cost.
+    Represents a customizable pizza with crust, sauce(s), cheese, and toppings.
+
+    This class allows you to specify the type of crust, one or more sauces, cheese, and a list of toppings.
+    It validates the inputs, stores the pizza configuration, and can calculate the total cost based on the selected ingredients.
+
+    
+    Attributes:
+    
+    crust : str
+        The type of crust (e.g., 'thin', 'thick', 'gluten_free').
+    sauce : list
+        List of sauces (e.g., ['marinara', 'pesto']).
+    cheese : str
+        The type of cheese (currently only 'mozzarella' is supported).
+    toppings : list 
+        List of toppings (e.g., ['pineapple', 'pepperoni']).
+
     """
 
     # Define the pricing 
@@ -47,7 +63,10 @@ class Pizza:
        
     def cost(self):
         """
-        Determine the cost of a pizza
+        Calculate and return the total cost of the pizza based on prices of the crust, sauces, cheese, and toppings.
+
+        Returns:
+            int: The total cost of the pizza in dollars.
         """
         total_cost = 0
 

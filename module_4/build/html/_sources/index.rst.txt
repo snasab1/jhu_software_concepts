@@ -6,20 +6,19 @@
 Module 4: Pizza Ordering System documentation
 =============================================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Pulling comments from the source code using Sphinx and Read the Docs theme. 
 
 .. automodule:: src.pizza
    :members:
    :undoc-members:
    :show-inheritance:
+   :exclude-members: crust_prices, sauce_prices, topping_prices, cheese_prices
 
 .. automodule:: src.order
    :members:
    :undoc-members:
    :show-inheritance:
-   
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
