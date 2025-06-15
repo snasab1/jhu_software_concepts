@@ -66,7 +66,7 @@ def test__str__():
 def test_cost(crust, sauce, cheese, toppings, expected_cost):
     """
     Test that the cost() method returns the correct calculated cost for a given input pizza.
-    Uses parameterized testing to cover various combinations.
+    Uses parameterized testing to cover various combinations listed above. 
     """
     pizza = Pizza(crust, sauce, cheese, toppings)
     assert pizza.cost() == expected_cost
