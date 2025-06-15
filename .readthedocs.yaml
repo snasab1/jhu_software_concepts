@@ -9,14 +9,14 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.9" # Or your preferred Python version, e.g., "3.10", "3.11"
+  base_dir: module_4/source/
   # You can also set a base directory for your documentation
   # where conf.py and requirements.txt live
   jobs:
     pre_build:
-      - pip install -r module_4/requirements.txt # Ensure this path is correct
+      - pip install -r requirements.txt # Ensure this path is correct
 
 # Sphinx configuration
 sphinx:
-  configuration: module_4/source/conf.py
-  doc_dir: module_4/source/
+  configuration: conf.py
 
