@@ -2,3 +2,6 @@
 **/__pycache__/
 module_2/*.html
 realpython_exercises/
+.venv/
+*.zip
+module_3/limitations.docx
