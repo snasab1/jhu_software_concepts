@@ -7,5 +7,46 @@
 ---
 
 ## Project Overview
-**Using data from Module 3 (see README for the context of that assignment and running instructions), I improved my code using Pylint until I achieved 10/10 (linted code did not have any error messages). I also incorporated SQL Injection Defenses as specified by the assignment. Finally, I visually analyzed at my module dependencies using pydeps and graphviz.**
+
+This project builds on data from Module 3 and demonstrates:
+- Secure SQL data analysis, defending against SQL injection
+- Code quality improvements using Pylint (score 10/10)
+- Visualization of module dependencies with pydeps and graphviz
+
+---
+## How to Run
+
+1. **Install dependencies:**  
+   ```sh
+   pip install -r requirements.txt
+   ```
+2. **Set up the database:**  
+   Ensure PostgreSQL is running and the applicant data is loaded (see Module 3 for setup).
+3. **Run the Flask app:**  
+   ```sh
+   python app.py
+   ```
+   Then open [http://localhost:8080](http://localhost:8080) in your browser.
+
+---
+
+## Static Analysis
+
+- Run Pylint on code:
+  ```sh
+  pylint app.py query_data.py
+  ```
+  All modules should score 10/10.
+
+---
+
+## Dependency Visualization
+
+- Generate a dependency graph:
+  ```sh
+  pydeps app.py
+  ```
+  The SVG (`app.svg`) shows how modules and dependencies are connected.
+
+
 
