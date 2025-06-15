@@ -17,5 +17,5 @@ build:
 
 # Sphinx configuration
 sphinx:
-  configuration: module_4/conf.py
+  configuration: module_4/source/conf.py
 
