@@ -19,13 +19,3 @@ build:
 sphinx:
   configuration: module_4/conf.py
 
-# Optional: Indicate where your docs are. This helps with automatic detection.
-# This specifies the directory containing the 'conf.py' and 'index.rst' files
-# and is relative to the root of your repository.
-formats: [] # We don't need to specify formats, RTD handles this
-
-python:
-  install:
-    - method: pip
-      path: .
-      requirements: module_4/requirements.txt
